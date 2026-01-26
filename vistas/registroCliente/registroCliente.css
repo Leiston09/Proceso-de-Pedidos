@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+              url("../Imagenes/imagenFondoPantalla/fondo.avif") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* BOTÓN REGRESAR FIJO */
+.btn-secundario {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 18px;
+  background: #e0e0e0;
+  color: #000;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1000;
+  transition: all 0.2s ease;
+}
+
+.btn-secundario:hover {
+  background: #cfcfcf;
+  transform: translateY(-2px);
+}
+
+/* CONTENEDOR */
+.contenedor {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+  margin-top: 40px;
+}
+
+/* TARJETA */
+.tarjeta {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 25px 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tarjeta h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+/* FORMULARIO */
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 15px;
+}
+
+.formulario input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.formulario input:focus {
+  outline: none;
+  border-color: #0b5ed7;
+  box-shadow: 0 0 0 2px rgba(11,94,215,0.15);
+}
+
+.formulario input:disabled {
+  background: #f5f5f5;
+  color: #666;
+  font-weight: 600;
+}
+
+/* BARRA DE BOTONES ABAJO */
+.barra-opciones {
+  grid-column: 1 / -1; /* que ocupe las 2 columnas del grid */
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.barra-opciones button {
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  background: linear-gradient(135deg, #0b5ed7, #084298);
+  color: #fff;
+}
+
+.barra-opciones button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(11,94,215,0.4);
+}
+
+/* RESPONSIVIDAD */
+@media (max-width: 600px) {
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+  
+  .barra-opciones {
+    grid-column: 1 / 2;
+  }
+}

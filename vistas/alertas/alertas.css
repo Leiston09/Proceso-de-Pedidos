@@ -1,0 +1,30 @@
+.alerta {
+  position: fixed;          /* 🔥 clave */
+  top: 20px;                /* arriba */
+  right: 20px;              /* derecha */
+  z-index: 9999;            /* sobre todo */
+  
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+  min-width: 250px;
+}
+
+
+.alerta-error {
+  background-color: #e74c3c;
+}
+
+.alerta-exito {
+  background-color: #2ecc71;
+}
+
+.alerta-advertencia {
+  background-color: #f1c40f;
+  color: #000;
+}
+.alerta-info {
+  background-color: #3498db;
+}

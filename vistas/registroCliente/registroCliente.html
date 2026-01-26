@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Cliente</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./registroCliente.css">
+  <link rel="stylesheet" href="../alertas/alertas.css">
+</head>
+<body>
+
+<a href="../../login.html" class="btn-secundario">REGRESAR</a>
+
+<div class="contenedor">
+  <div class="tarjeta">
+    <h2>REGISTRO DE CLIENTE</h2>
+
+    <form class="formulario" id="formRegistro">
+
+        <input type="text" id="cedula" name="cedula" placeholder="CÉDULA">
+        <input type="email" id="correo" name="correo" placeholder="CORREO ELECTRÓNICO">
+
+        <input type="text" id="nombre" name="nombre" placeholder="NOMBRE">
+        <input type="text" id="apellido" name="apellido" placeholder="APELLIDO">
+
+        <input type="text" id="direccion" name="direccion" placeholder="DIRECCIÓN">
+
+        <input type="date" id="fecha" name="fecha">
+
+        <input type="tel" id="telefono" name="telefono" placeholder="TELÉFONO">
+
+        <input type="text" value="Tipo: NORMAL" disabled>
+
+        <input type="password" id="clave" name="clave" placeholder="CONTRASEÑA">
+        <input type="password" id="clave2" name="clave2" placeholder="CONFIRMAR CONTRASEÑA">
+
+        <input type="text" value="Estado: ACTIVO" disabled>
+
+        <div id="errores"></div>
+
+        <div class="barra-opciones">
+            <button type="submit">COMPLETAR REGISTRO</button>
+        </div>    
+
+    </form>
+  </div>
+</div>
+
+<script  src="./ValidacionesRegistroCliente.js" type="module"></script>
+</body>
+</html>

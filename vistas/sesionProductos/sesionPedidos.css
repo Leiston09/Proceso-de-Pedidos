@@ -1,0 +1,618 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   BODY GENERAL
+========================= */
+body {
+    background-color: #f3f4f6;
+    color: #1f2933;
+}
+
+/* =========================
+   HEADER / NAVBAR (FIJO)
+========================= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background-color: #f8fafc; /* fondo limpio */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 1000;
+}
+
+/* =========================
+   USUARIO
+========================= */
+header > div {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+header span {
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    font-family: 'Inter', sans-serif;
+}
+
+/* =========================
+   NAV GENERAL
+========================= */
+.nav-principal {
+    display: flex;
+    align-items: center;
+}
+
+/* =========================
+   LINK BASE
+========================= */
+.nav-link {
+    font-family: 'Inter', sans-serif;
+    margin-left: 16px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+    background-color: transparent;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* =========================
+   PRODUCTOS (ACTIVO)
+========================= */
+.nav-productos.activo {
+    background-color: #e0f2fe; /* azul suave */
+    color: #0369a1;
+}
+
+
+/* =========================
+   CARRITO
+========================= */
+.nav-carrito {
+    background-color: #ecfeff;
+    color: #0f766e;
+}
+
+.nav-carrito:hover {
+    background-color: #cffafe;
+}
+
+
+
+.nav-carrito:hover {
+    background-color: #00ccffa3;
+}
+
+
+/* =========================
+   ASIDE / CATEGORÍAS
+========================= */
+aside {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    width: 220px;
+    height: calc(100vh - 160px);
+
+    background: linear-gradient(180deg, #e0ecff, #c7ddff);
+    border-radius: 14px;
+    padding: 18px;
+
+    box-shadow: 0 8px 20px rgba(30, 64, 175, 0.15);
+
+    overflow-y: auto;                  /* scroll interno */
+    scrollbar-width: thin;             /* Firefox */
+    scrollbar-color: #93c4fd99 transparent;
+}
+
+/* SCROLLBAR PARA WEBKIT (Chrome, Edge, Safari) */
+aside::-webkit-scrollbar {
+    width: 8px;
+}
+
+aside::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+aside::-webkit-scrollbar-thumb {
+    background-color: #93c4fd99;
+    border-radius: 6px;
+    border: 2px solid transparent;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+aside h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #0f172a;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+/* =========================
+   SELECTOR DE CATEGORÍAS
+========================= */
+aside select#selector-categorias {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #93c4fd;
+    background-color: #ffffff;
+    color: #1e293b;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 18px;
+
+    transition: 
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+aside select#selector-categorias:hover {
+    border-color: #6366f1;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25);
+}
+
+/* =========================
+   LISTA
+========================= */
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ITEM */
+aside li {
+    margin-bottom: 12px;
+}
+
+/* =========================
+   LINK / OPCIONES
+========================= */
+aside a {
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+
+    background-color: #dbeafe;        /* azul suave */
+    color: #1e293b;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* HOVER */
+aside a:hover {
+    background-color: #bfdbfe;
+    transform: translateX(4px);
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+}
+
+/* ACTIVO (SIEMPRE UNO) */
+aside a:target,
+aside a.activo {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: #ffffff;
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.45);
+}
+
+
+
+/* =========================
+   MAIN (FIJO) + SCROLL
+========================= */
+main {
+    position: fixed;
+    top: 64px;
+    left: 260px;
+    right: 0;
+    bottom: 60px;
+    padding: 24px;
+    background-color: #f8fafc;
+}
+
+.scroll-productos {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 12px;
+    scroll-behavior: smooth;
+}
+
+/* SCROLL ELEGANTE */
+.scroll-productos::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scroll-productos::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scroll-productos::-webkit-scrollbar-thumb {
+    background-color: #c7d2fe;
+    border-radius: 10px;
+}
+
+.scroll-productos::-webkit-scrollbar-thumb:hover {
+    background-color: #a5b4fc;
+}
+
+/* Firefox */
+.scroll-productos {
+    scrollbar-width: thin;
+    scrollbar-color: #c7d2fe transparent;
+}
+
+/* =========================
+   GRID DE PRODUCTOS
+========================= */
+.lista-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 24px;
+}
+
+/* =========================
+   TARJETA PRODUCTO
+========================= */
+.producto {
+    background-color: #43539c;
+    border-radius: 14px;
+    border: 1px solid #000000;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================
+   IMAGEN
+========================= */
+.imagen-producto {
+    aspect-ratio: 1 / 1;
+    background-color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e2e8f0;
+    border-radius: 14px 14px 0 0;
+}
+
+.imagen-producto img {
+    max-width: 70%;
+    max-height: 70%;
+}
+
+/* =========================
+   INFO PRODUCTO
+========================= */
+.info-producto {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-producto h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.info-producto p {
+    font-size: 13px;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+.precio {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 4px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* COMPRAR (PRIMARIO) */
+.btn-comprar {
+    flex: 1;
+    background-color: #22c55e;
+    color: #ffffff;
+    border: none;
+    padding: 8px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-comprar:hover {
+    background-color: #16a34a;
+    transform: scale(1.02);
+}
+
+/* DETALLES (SECUNDARIO) */
+.btn-detalle {
+    flex: 1;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    padding: 8px 0;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #f8fafc;
+    text-align: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-detalle:hover {
+    background-color: #e0ecff;
+    border-color: #93c5fd;
+}
+
+/* =========================
+   FOOTER (FIJO)
+========================= */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #1f2933;
+    color: #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   MODAL FONDO
+========================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.35);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.modal:target {
+    display: flex;
+}
+
+/* =========================
+   TARJETA MODAL
+========================= */
+.modal-card {
+    width: 380px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.3);
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+.modal-header {
+    padding: 18px 22px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.producto-nombre {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.producto-categoria {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1d4ed8;
+    background-color: #e0ecff;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+/* =========================
+   BODY
+========================= */
+.modal-body {
+    padding: 20px 22px;
+}
+
+/* DESCRIPCIÓN */
+.producto-descripcion {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+/* =========================
+   INFO CLAVE (TABLA PRODUCTO)
+========================= */
+.producto-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.producto-info div {
+    background-color: #f8fafc;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.label {
+    display: block;
+    font-size: 11px;
+    color: #64748b;
+    margin-bottom: 2px;
+}
+
+.valor {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* VALORES ESPECIALES */
+.precio {
+    color: #16a34a;
+}
+
+.stock {
+    color: #2563eb;
+}
+
+.estado {
+    color: #059669;
+}
+
+.descuento {
+    color: #ca8a04;
+}
+
+.impuesto {
+    color: #7c3aed;
+}
+
+/* =========================
+   CANTIDAD
+========================= */
+.producto-cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.producto-cantidad label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.producto-cantidad input {
+    width: 72px;
+    padding: 7px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.modal-footer {
+    padding: 16px 22px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    gap: 10px;
+}
+
+/* BOTÓN REGRESAR */
+.btn-secundario {
+    flex: 1;
+    padding: 9px 0;
+    background-color: #f1f5f9;
+    color: #334155;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-secundario:hover {
+    background-color: #e2e8f0;
+}
+
+/* BOTÓN COMPRAR */
+.btn-primario {
+    flex: 1;
+    padding: 9px 0;
+    background-color: #22c55e;
+    color: #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.btn-primario:hover {
+    background-color: #16a34a;
+}
