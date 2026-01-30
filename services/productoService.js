@@ -1,6 +1,6 @@
 import { Producto } from "../modelo/producto.js";
 
-export const productos = [
+export const listaDeProductos = [
   // ================= CELULARES =================
   new Producto({
     id: "P001",
