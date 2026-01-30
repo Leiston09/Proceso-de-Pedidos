@@ -11,51 +11,39 @@
 <body>
 
     <header>
-
-        <!-- Usuario -->
         <div class="usuario">
             <img src="../Imagenes/imagenBarraOpciones/Usuario.png" alt="Usuario">
             <span id="nombre-usuario">Usuario</span>
         </div>
 
-        <!-- Navegación -->
         <nav class="nav-principal">
             <a href="../sesionProductos/sesionPedidos.html" class="nav-link nav-productos activo">Productos</a>
             <a href="../carroProductos/sesionCarroCompras.html" class="nav-link nav-carrito">🛒 Carrito</a>
         </nav>
-
     </header>
 
 
-    <!-- =========================
-         ASIDE / CATEGORÍAS
-    ========================== -->
     <aside class="categorias">
     
-    <!-- Selector de modo -->
-    <div class="categoria-modo">
-        <select id="selector-categorias">
-        <option value="completa">Categoría completa</option>
-        <option value="individual">Categoría individual</option>
-        </select>
-    </div>
+        <div class="categoria-modo">
+            <select id="selector-categorias">
+            <option value="completa">Categoría completa</option>
+            <option value="individual">Categoría individual</option>
+            </select>
+        </div>
 
-    <!-- Lista de categorías -->
-    <ul id="lista-categorias">
-        <li><a class="activo" data-categoria="celulares">Celulares</a></li>
-        <li><a data-categoria="bebidas">Bebidas</a></li>
-        <li><a data-categoria="snacks">Snacks</a></li>
-        <li><a data-categoria="limpieza">Limpieza</a></li>
-        <li><a data-categoria="hogar">Hogar</a></li>
-        <li><a data-categoria="Casas">Casas</a></li>
-    </ul>
+        <ul id="lista-categorias">
+            <li><a class="activo" data-categoria="celulares">Celulares</a></li>
+            <li><a data-categoria="bebidas">Bebidas</a></li>
+            <li><a data-categoria="snacks">Snacks</a></li>
+            <li><a data-categoria="limpieza">Limpieza</a></li>
+            <li><a data-categoria="hogar">Hogar</a></li>
+            <li><a data-categoria="Casas">Casas</a></li>
+        </ul>
 
     </aside>
 
 
-    <!-- =========================
-         MAIN / PRODUCTOS
-    ========================== -->
     <main>
 
         <div class="scroll-productos">
@@ -66,14 +54,11 @@
 
     </main>
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+
     <footer>
         © 2026 Tienda Online — Todos los derechos reservados
     </footer>
 
-<!-- MODAL DETALLES PRODUCTO -->
 <div id="detalle-producto" class="modal"></div>
 
 </body>

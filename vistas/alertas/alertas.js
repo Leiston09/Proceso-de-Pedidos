@@ -1,6 +1,6 @@
 export function mostrarAlerta(mensaje, tipo) {
 
-  // 🔥 Si ya hay una alerta, eliminarla
+  // Si ya hay una alerta, eliminarla
   const alertaExistente = document.querySelector(".alerta");
   if (alertaExistente) {
     alertaExistente.remove();

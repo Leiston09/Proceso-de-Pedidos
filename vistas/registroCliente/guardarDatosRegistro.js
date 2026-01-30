@@ -13,7 +13,7 @@ export function guardarDatosCliente() {
 
     const resultado = registrarCliente({ cedula, correo, nombre, apellido, direccion, edad, telefono, clave });
 
-    if (!resultado.ok) {
+    if (!resultado.ok) {  
         if (resultado.error === "CEDULA") return mostrarAlerta("La cédula ya está registrada", "advertencia");
         if (resultado.error === "CORREO") return mostrarAlerta("El correo ya está registrado", "advertencia");
     }
