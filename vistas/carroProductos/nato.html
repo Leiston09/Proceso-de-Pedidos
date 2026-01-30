@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrito de Compras</title>
+<link rel="stylesheet" href="estilos.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+
+        <!-- Usuario -->
+        <div class="usuario">
+            <img src="../Imagenes/Usuario.png" alt="Usuario">
+            <span>Invitado</span>
+        </div>
+
+        <!-- Navegación -->
+        <nav class="nav-principal">
+            <a href="../sesionProductos/sesionPedidos.html" class="nav-link nav-productos activo">Productos</a>
+            <a href="../carroProductos/nato.html" class="nav-link nav-carrito">🛒 Carrito</a>
+        </nav>
+
+    </header>
+
+    <div class="contenedor">
+        <h2>🛒 TU CARRITO DE COMPRA 🛒</h2>
+
+        <table class="tabla-carrito">
+            <thead>
+                <tr><th>Num Pedido</th><th>Producto</th><th>Precio</th><th>Cantidad</th><th>Subtotal</th><th></th></tr>
+            </thead>
+            <tbody>
+                <tr><th>1</th><td>Zapatos color café</td><td>$539.10</td><td><input type="number" value="1" min="1"></td><td>$539.10</td><td><button class="btn-eliminar">Eliminar</button></td></tr>
+                <tr><th>2</th><td>Laptop 15.6" con Windows 10</td><td>$11,999.00</td><td><input type="number" value="1" min="1"></td><td>$11,999.00</td><td><button class="btn-eliminar">Eliminar</button></td></tr>
+                <tr><th>3</th><td>Smartphone Negro 32gb Dual Sim 3gb Ram</td><td>$2,899.00</td><td><input type="number" value="1" min="1"></td><td>$2,899.00</td><td><button class="btn-eliminar">Eliminar</button></td></tr>
+                <tr><th>4</th><td>Punto de Venta CDP 3.0</td><td>$900.00</td><td><input type="number" value="1" min="1"></td><td>$900.00</td><td><button class="btn-eliminar">Eliminar</button></td></tr>
+            </tbody>
+        </table>
+
+        <div class="totales">
+            <span>Total a pagar:</span> <strong>$16,337.10</strong>
+        </div>
+
+        <!-- Toggle con CSS -->
+        <input type="checkbox" id="toggle-pago" style="display:none;">
+        <div class="acciones">
+            <label for="toggle-pago" class="btn-proceder">Proceder al pago</label>
+        </div>
+
+        <!-- Sección de pago -->
+        <div class="seccion-pago">
+            <h3>Elige tu forma de pago</h3>
+            <div class="opciones-pago-scroll">
+                <label class="opcion-pago">
+                    <input type="radio" name="metodo-pago" value="tarjeta" checked>
+                    <div class="contenido-opcion"><span class="icono">💳</span><div class="texto"><span class="metodo">Tarjeta de crédito o débito</span><span class="detalle">Visa, Mastercard, Diners</span></div></div>
+                </label>
+                <label class="opcion-pago">
+                    <input type="radio" name="metodo-pago" value="transferencia">
+                    <div class="contenido-opcion"><span class="icono">🏦</span><div class="texto"><span class="metodo">Transferencia / Depósito</span><span class="detalle">Banco Pacífico, Pichincha...</span></div></div>
+                </label>
+                <label class="opcion-pago">
+                    <input type="radio" name="metodo-pago" value="efectivo">
+                    <div class="contenido-opcion"><span class="icono">💵</span><div class="texto"><span class="metodo">Efectivo contra entrega</span><span class="detalle">Solo Guayaquil</span></div></div>
+                </label>
+                <label class="opcion-pago">
+                    <input type="radio" name="metodo-pago" value="paypal">
+                    <div class="contenido-opcion"><span class="icono">🅿️</span><div class="texto"><span class="metodo">PayPal</span><span class="detalle">Pago seguro internacional</span></div></div>
+                </label>
+            </div>
+
+            <div class="acciones">
+                <label for="toggle-pago" class="btn-regresar">Regresar al carrito</label>
+                <a href="../sesionPedidos.html" class="btn-pago">Confirmar y pagar</a>
+            </div> 
+        </div>
+    </div>
+
+</body>
+</html>

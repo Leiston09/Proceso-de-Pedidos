@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="./vistas/login/login.css">
+    <link rel="stylesheet" href="./vistas/alertas/alertas.css">
+</head>
+<body>
+
+<div class="contenedor-login">
+    <div class="tarjeta-login">
+        <div class="avatar"></div>
+
+        <form>
+            <div class="campo">
+                <input id="correo" type="email" placeholder="Correo electrónico">
+            </div>
+
+            <div class="campo">
+                <input id="clave" type="password" placeholder="Contraseña">
+            </div>
+
+
+            <div class="opciones">
+                <label>
+                    <input type="checkbox"> Recordarme
+                </label>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <button type="button">INICIAR SESIÓN</button>
+
+            <p class="registro">
+                ¿No tienes cuenta?
+                <a href="./vistas/registroCliente/registroCliente.html">Crear Cuenta</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<script type="module" src="./vistas/login/login.js"></script>
+
+</body>
+</html>
