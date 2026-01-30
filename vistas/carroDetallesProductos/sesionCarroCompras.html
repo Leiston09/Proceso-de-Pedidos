@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./sesionCarroCompras.css">
+  <link rel="stylesheet" href="../alertas/alertas.css">
+</head>
+
+<body>
+
+<header class="header">
+  <!-- Usuario -->
+  <div class="usuario">
+    <img src="../Imagenes/imagenBarraOpciones/Usuario.png" alt="Usuario">
+    <span id="nombre-usuario">Invitado</span>
+  </div>
+
+  <!-- Navegación -->
+  <nav class="nav-principal">
+    <a href="../sesionProductos/sesionPedidos.html" class="nav-link">Productos</a>
+    <a href="./sesionCarroCompras.html" class="nav-link activo">🛒 Carrito</a>
+  </nav>
+</header>
+
+<main class="contenedor">
+
+  <h2>🛒 Tu carrito de compras</h2>
+
+  <!-- TABLA CARRITO -->
+  <table class="tabla-carrito">
+    <thead>
+      <tr>
+        <th>NumPedido</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+
+    <tbody id="productos-carrito">
+      <!-- JS renderiza aquí -->
+    </tbody>
+  </table>
+
+  <!-- TOTALES -->
+  <section class="totales">
+    <div id="total-carrito"></div>
+  </section>
+
+  <!-- Toggle pago -->
+  <input type="checkbox" id="toggle-pago" hidden>
+
+  <div class="acciones">
+    <label for="toggle-pago" class="btn-proceder">Proceder al pago</label>
+  </div>
+
+  <!-- SECCIÓN PAGO -->
+  <section class="seccion-pago">
+
+    <h3>Fecha de entrega</h3>
+    <input type="date" id="fecha-entrega">
+
+    <h3>Método de pago</h3>
+
+    <div class="opciones-pago-scroll">
+
+      <label class="opcion-pago">
+        <input type="radio" name="metodoPago" value="tarjeta" checked>
+        <span>💳 Tarjeta (Visa, Mastercard, Diners)</span>
+      </label>
+
+      <label class="opcion-pago">
+        <input type="radio" name="metodoPago" value="transferencia">
+        <span>🏦 Transferencia / Depósito</span>
+      </label>
+
+      <label class="opcion-pago">
+        <input type="radio" name="metodoPago" value="efectivo">
+        <span>💵 Efectivo contra entrega</span>
+      </label>
+
+      <label class="opcion-pago">
+        <input type="radio" name="metodoPago" value="paypal">
+        <span>🅿️ PayPal</span>
+      </label>
+
+    </div>
+
+    <div class="acciones">
+      <label for="toggle-pago" class="btn-regresar">Regresar</label>
+      <button id="btn-confirmar-pago" class="btn-pago">Confirmar y pagar</button>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Tienda Online — Todos los derechos reservados
+</footer>
+
+<!-- JS -->
+<script type="module" src="./sesionCarroCompras.js" defer></script>
+
+</body>
+</html>

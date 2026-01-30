@@ -1,10 +1,10 @@
 import { obtenerProductoPorId } from "../../controlador/productoController.js";
-import { validarStock } from "./validacionesProducto.js"; // Importa el nuevo módulo
+import { validarStock } from "./validacionesProducto.js";
 
 export function abrirModalProducto(id, contenedorModal) {
   const p = obtenerProductoPorId(id);
 
-
+  // 2. Agregamos el id="btn-comprar" al botón en el template
   contenedorModal.innerHTML = `
     <div class="modal-card">
       <div class="modal-header">
@@ -23,25 +23,25 @@ export function abrirModalProducto(id, contenedorModal) {
         </div>
         <div class="producto-cantidad">
           <label for="cantidad-${p.id}">Cantidad</label>
-          <input type="number" id="cantidad-${p.id}" name="cantidad_producto" value="1" min="0" max="${p.stock + 1}">
+          <input type="number" id="cantidad-${p.id}" name="cantidad_producto" value="1" min="0" max="${p.stock + 1 }">
         </div>
       </div>
       <div class="modal-footer">
-        <button onclick="document.getElementById('detalle-producto').classList.remove('mostrar')" class="btn-secundario">Regresar</button>
-        <button class="btn-primario">Comprar</button>
+        <button id="btn-regresar" class="btn-secundario">Regresar</button>
+        <button id="btn-comprar" class="btn-primario">Comprar</button> 
       </div>
     </div>
   `;
-  contenedorModal.classList.add("mostrar");
 
+  contenedorModal.classList.add("mostrar");
   validarStock(p, contenedorModal);
 
-  const btnCerrar = contenedorModal.querySelector("#btn-cerrar-modal");
-  if (btnCerrar) {
-    btnCerrar.onclick = () => {
-      contenedorModal.classList.remove("mostrar");
-    };
-  }
+  // Configurar botón regresar
+  contenedorModal.querySelector("#btn-regresar").onclick = () => {
+    contenedorModal.classList.remove("mostrar");
+  };
+
+
 
   return p;
 }

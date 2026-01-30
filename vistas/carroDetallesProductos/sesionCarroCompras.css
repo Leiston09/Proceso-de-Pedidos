@@ -1,0 +1,347 @@
+/* =========================
+   RESET + BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #f8fafc;
+  color: #0f172a;
+  padding-top: 72px; /* espacio header fijo */
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 1000;
+}
+
+/* Usuario */
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.usuario img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.usuario span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* =========================
+   NAV
+========================= */
+.nav-principal {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-link {
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.nav-link.activo {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.nav-carrito {
+  background: #ecfeff;
+  color: #0f766e;
+}
+
+.nav-carrito:hover {
+  background: #cffafe;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.contenedor {
+  max-width: 1100px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 18px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   TABLA CARRITO
+========================= */
+.tabla-carrito {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.tabla-carrito th {
+  background: #f8fafc;
+  font-weight: 600;
+  padding: 12px;
+  border-bottom: 2px solid #e2e8f0;
+  text-align: center;
+}
+
+.tabla-carrito td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+input[type="number"] {
+  width: 70px;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* =========================
+   BOTÓN ELIMINAR
+========================= */
+.btn-eliminar {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-eliminar:hover {
+  background: #dc2626;
+}
+
+/* =========================
+   TOTALES
+========================= */
+.totales {
+  text-align: right;
+  font-size: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 2px solid #e2e8f0;
+}
+
+.totales strong {
+  font-size: 1.5rem;
+  color: #2563eb;
+}
+
+/* =========================
+   BOTONES PRINCIPALES
+========================= */
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-proceder,
+.btn-pago,
+.btn-regresar {
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+/* proceder */
+.btn-proceder {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+}
+
+/* pagar */
+.btn-pago {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  text-decoration: none;
+}
+
+/* regresar */
+.btn-regresar {
+  background: #64748b;
+  color: white;
+}
+
+.btn-proceder:hover,
+.btn-pago:hover,
+.btn-regresar:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* =========================
+   FECHA ENTREGA
+========================= */
+.titulo-fecha {
+  text-align: right;
+  margin-bottom: 6px;
+}
+
+#fecha-entrega {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+#fecha-entrega:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================
+   SECCIÓN PAGO
+========================= */
+.seccion-pago {
+  display: none;
+  margin-top: 2rem;
+}
+
+#toggle-pago:checked ~ .seccion-pago {
+  display: block;
+}
+
+/* =========================
+   OPCIONES PAGO
+========================= */
+.opciones-pago-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.opciones-pago-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.opcion-pago {
+  flex: 0 0 260px;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  scroll-snap-align: start;
+}
+
+.opcion-pago:hover {
+  border-color: #2563eb;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.12);
+}
+
+.opcion-pago input {
+  display: none;
+}
+
+.icono {
+  font-size: 2.2rem;
+}
+
+.texto .metodo {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.texto .detalle {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+
+/* =========================
+   FOOTER (FIJO)
+========================= */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #1f2933;
+    color: #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .contenedor {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .tabla-carrito th,
+  .tabla-carrito td {
+    font-size: 13px;
+  }
+
+  .opcion-pago {
+    flex: 0 0 85vw;
+  }
+}
