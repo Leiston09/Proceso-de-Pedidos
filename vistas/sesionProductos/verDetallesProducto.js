@@ -1,5 +1,6 @@
 import { obtenerProductoPorId } from "../../controlador/productoController.js";
 import { validarStock } from "./validacionesProducto.js";
+import { guardarProductoEnCarrito } from "./guardarProductoCarrito.js";
 
 export function abrirModalProducto(id, contenedorModal) {
   const p = obtenerProductoPorId(id);
@@ -34,14 +35,27 @@ export function abrirModalProducto(id, contenedorModal) {
   `;
 
   contenedorModal.classList.add("mostrar");
+
   validarStock(p, contenedorModal);
 
   // Configurar botón regresar
   contenedorModal.querySelector("#btn-regresar").onclick = () => {
-    contenedorModal.classList.remove("mostrar");
+    retroceder()
   };
 
+    // Botón comprar
+    const btnComprar = contenedorModal.querySelector("#btn-comprar");
+    const cantidadInput = document.getElementById(`cantidad-${p.id}`);
+    btnComprar.onclick = () => {
+      guardarProductoEnCarrito(p, parseInt(cantidadInput.value));
+      setTimeout(() => {
+      retroceder()
+          }, 1200);
+    };
 
+    function retroceder(){
+      contenedorModal.classList.remove("mostrar");
+    }
 
   return p;
 }

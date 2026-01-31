@@ -1,11 +1,11 @@
 import { DetallePedido } from "../modelo/detallePedido.js";
 import { guardarPedido, obtenerPedidos, editarCantidadPedido, eliminarPedido } from "../services/PedidoServices.js";
 
-export function guardarPedidoCarro(producto, cantidad = 1) {
+export function guardarPedidoCarro(producto, cantidad) {
   const detalle = new DetallePedido({
     idProducto: producto.id,          
     nombre: producto.nombre,
-    cantidad: cantidad,
+    cantidad: cantidad, 
     precioUnitario: producto.precio   
   });
 
@@ -22,5 +22,5 @@ export function modificarCantidadProducto(idProducto, nuevaCantidad){
 }
 
 export function eliminarProducto(idProducto) {
-    eliminarPedido(idProducto); // Llama a la función del service
+    eliminarPedido(idProducto); 
 }

@@ -4,65 +4,76 @@ import {
   eliminarProducto
 } from "../../controlador/detallePedidoController.js";
 
-const tbody = document.getElementById("productos-carrito");
-const totalDiv = document.getElementById("total-carrito");
+// Referencias al DOM
+const tbodyCarrito = document.getElementById("productos-carrito");
+const divTotalCarrito = document.getElementById("total-carrito");
 
 function renderCarrito() {
   const carrito = obtenerDetallesPedidos();
-  tbody.innerHTML = "";
+  tbodyCarrito.innerHTML = "";
   let totalGeneral = 0;
 
   if (carrito.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;">El carrito está vacío</td></tr>`;
-    totalDiv.innerHTML = "<strong>Total: $0.00</strong>";
+    tbodyCarrito.innerHTML = `
+      <tr>
+        <td colspan="6" style="text-align:center;">El carrito está vacío</td>
+      </tr>
+    `;
+    divTotalCarrito.innerHTML = "<strong>Total: $0.00</strong>";
     return;
   }
 
-  carrito.forEach((item, index) => {
-    // Calculamos subtotal basado en los nombres de tu modelo
-    const subtotal = item.precioUnitario * item.cantidad;
-    totalGeneral += subtotal;
+  carrito.forEach((producto, index) => {
+    // Calculamos subtotal
+    const subtotalProducto = producto.precioUnitario * producto.cantidad;
+    totalGeneral += subtotalProducto;
 
-    tbody.innerHTML += `
+    tbodyCarrito.innerHTML += `
       <tr>
         <td>${index + 1}</td>
-        <td>${item.nombre}</td>
-        <td>$${item.precioUnitario.toFixed(2)}</td>
+        <td>${producto.nombre}</td>
+        <td>$${producto.precioUnitario.toFixed(2)}</td>
         <td>
-          <input type="number" min="1" value="${item.cantidad}" 
-            data-id="${item.idProducto}" class="input-cantidad">
+          <input type="number" min="1" value="${producto.cantidad}" 
+            data-id="${producto.idProducto}" class="input-cantidad-producto">
         </td>
-        <td>$${subtotal.toFixed(2)}</td>
+        <td>$${subtotalProducto.toFixed(2)}</td>
         <td>
-          <button class="btn-eliminar" data-id="${item.idProducto}">❌</button>
+          <button class="btn-eliminar-producto" data-id="${producto.idProducto}">❌</button>
         </td>
       </tr>
     `;
   });
 
-  totalDiv.innerHTML = `<strong>Total: $${totalGeneral.toFixed(2)}</strong>`;
+  divTotalCarrito.innerHTML = `<strong>Total: $${totalGeneral.toFixed(2)}</strong>`;
 }
 
+
+
 // Evento para modificar cantidad
-tbody.addEventListener("change", (e) => {
-  if (e.target.classList.contains("input-cantidad")) {
-    const id = e.target.dataset.id;
+tbodyCarrito.addEventListener("change", (e) => {
+  if (e.target.classList.contains("input-cantidad-producto")) {
+    const idProducto = e.target.dataset.id;
     const nuevaCantidad = parseInt(e.target.value);
-    
+
     if (nuevaCantidad >= 1) {
-      modificarCantidadProducto(id, nuevaCantidad);
+      modificarCantidadProducto(idProducto, nuevaCantidad);
       renderCarrito(); // Recargamos la tabla para actualizar el total
     }
   }
 });
 
-tbody.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn-eliminar")) {
-    const id = e.target.dataset.id;
-    eliminarProducto(id); // Llama al controller
-    renderCarrito();      // Refresca la tabla
+// Evento para eliminar producto
+tbodyCarrito.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn-eliminar-producto")) {
+    const idProducto = e.target.dataset.id;
+    eliminarProducto(idProducto);
+    renderCarrito();
   }
 });
+
+
+
 
 // Inicializar la tabla al cargar
 renderCarrito();

@@ -1,5 +1,6 @@
 import { buscarClientePorCorreo } from "../../controlador/clienteController.js";
 import { mostrarAlerta } from "../alertas/alertas.js";
+import { guardarClienteParaBarra } from "../../controlador/clienteController.js"; 
 
 const btnLogin = document.querySelector("button");
 
@@ -18,7 +19,8 @@ btnLogin.addEventListener("click", (e) => {
 
     if (cliente.clave !== clave)
         return mostrarAlerta("Contraseña incorrecta", "error");
-
+   
+    guardarClienteParaBarra(cliente);
     mostrarAlerta("Inicio de sesión exitoso", "exito");
 
     setTimeout(() => {
