@@ -1,0 +1,492 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   HEADER / NAVBAR (FIJO)
+========================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   USUARIO
+========================= */
+header > div {
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+header img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+header span {
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* =========================
+   NAV GENERAL
+========================= */
+.nav-principal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =========================
+   LINK BASE
+========================= */
+.nav-link {
+  font-family: 'Inter', sans-serif;
+  margin-left: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  background-color: transparent;
+  transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+  background-color: #f1f5f9;
+  color: #1e3a8a;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   PRODUCTOS (ACTIVO)
+========================= */
+.nav-productos.activo {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+/* =========================
+   REGISTRO
+========================= */
+.nav-registro:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   CARRITO
+========================= */
+.nav-carrito {
+  background-color: #ecfeff;
+  color: #0f766e;
+  transition: all 0.25s ease;
+}
+
+.nav-carrito:hover {
+  background-color: #cffafe;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.contenedor {
+  max-width: 980px;
+  margin: 6rem auto 3rem auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0d1117;
+}
+
+/* =========================
+   TABLA CARRITO
+========================= */
+.tabla-carrito {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.tabla-carrito th {
+  background-color: #e0f2fe;
+  color: #1e3a8a;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.tabla-carrito td {
+  padding: 1.2rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  color: #374151;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.tabla-carrito tbody tr:hover {
+  background-color: #f9fafb;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   INPUT CANTIDAD
+========================= */
+input[type="number"] {
+  width: 70px;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.25s ease, box-shadow 0.25s ease;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.25);
+}
+
+/* =========================
+   BOTONES OPCIONES
+========================= */
+.btn-opcion {
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease, transform 0.25s ease;
+}
+
+.btn-opcion.sumar {
+  background: #22c55e;
+}
+
+.btn-opcion.sumar:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+.btn-opcion.restar {
+  background: #eab308;
+  color: black;
+}
+
+.btn-opcion.restar:hover {
+  background: #ca8a04;
+  transform: translateY(-2px);
+}
+
+.btn-opcion.eliminar {
+  background: #ef4444;
+}
+
+.btn-opcion.eliminar:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   TOTALES
+========================= */
+.totales {
+  text-align: right;
+  font-size: 1.4rem;
+  margin: 2rem 0;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e5e7eb;
+}
+
+.totales strong {
+  font-size: 1.8rem;
+  color: #16a34a;
+}
+
+/* =========================
+   BOTONES PRINCIPALES
+========================= */
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-proceder {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.25s ease, transform 0.25s ease;
+}
+
+.btn-proceder:hover {
+  transform: scale(1.05);
+}
+
+.btn-pago {
+  background: linear-gradient(90deg, #0d6efd, #0b5ed7);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.25s ease, transform 0.25s ease;
+}
+
+.btn-pago:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   BLOQUES DE FECHA LADO A LADO
+========================= */
+
+.fecha-bloque {
+    display: flex;
+    justify-content: space-between; /* mantiene los cuadros en los extremos */
+    gap: 4rem; /* aumenta el espacio entre los cuadros (antes era 2rem) */
+    margin-bottom: 20px;
+}
+/* Cada cuadro de fecha (titulo arriba, contenido abajo) */
+.fecha-bloque > div {
+    display: flex;
+    flex-direction: column;  /* título arriba, contenido abajo */
+    align-items: center;     /* centra horizontalmente */
+    flex: 1;                 /* ocupa espacio igual cada cuadro */
+}
+
+/* Título de cada cuadro */
+.fecha-bloque h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+/* =========================
+   ESTILO DE INPUT DE FECHA
+========================= */
+
+.input-fecha {
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 2px solid #06719b;
+    border-radius: 8px;
+    background-color: #fffb0079;
+    color: #333;
+    text-align: center;
+    width: 100%;          /* ocupa todo el ancho del cuadro */
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+}
+
+.input-fecha:focus {
+    border-color: #1e5bb8;
+    box-shadow: 0 0 6px rgba(30, 91, 184, 0.35);
+    outline: none;
+}
+
+/* Opcional: inputs de solo lectura (fecha actual) más claros */
+.input-fecha[readonly] {
+    background-color: #e0e7ff;
+    cursor: default;
+}
+
+/* Centrar texto del título */
+.seccion-pago > div h3 {
+    text-align: center; /* centra horizontalmente */
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin: 20px 0; /* espacio arriba y abajo opcional */
+}
+
+/* =========================
+   MÉTODOS DE PAGO
+========================= */
+.seccion-pago {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  margin-top: 1rem;
+}
+
+#toggle-pago:checked ~ .seccion-pago {
+  max-height: 1500px; /* lo suficientemente grande para todo el contenido */
+  opacity: 1;
+  overflow: visible;
+  transition: all 0.5s ease;
+}
+
+#contenedor-metodos-pago {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.metodo-pago {
+  padding: 14px 22px;
+  border: 2px solid #d1d5db;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metodo-pago:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  border-color: #2563eb;
+}
+
+.metodo-pago.seleccionado {
+  border-color: #2563eb;
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+}
+
+.metodo-pago::after {
+  content: "✓";
+  display: none;
+  color: #2563eb;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.metodo-pago.seleccionado::after {
+  display: inline-block;
+}
+
+.opciones-pago-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: #2563eb #e5e7eb;
+}
+
+.opciones-pago-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.opciones-pago-scroll::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 3px;
+}
+
+.opciones-pago-scroll::-webkit-scrollbar-thumb {
+  background-color: #2563eb;
+  border-radius: 3px;
+}
+
+.opcion-pago {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  color: #374151;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.opcion-pago:hover {
+  background-color: #e0f2fe;
+  color: #1e3a8a;
+}
+
+.icono {
+  font-size: 2rem;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .opciones-pago-scroll {
+    max-height: 500px;
+  }
+  .opcion-pago {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+  }
+  .icono {
+    font-size: 1.8rem;
+    min-width: 45px;
+  }
+}

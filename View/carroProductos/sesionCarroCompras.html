@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrito de Compras</title>
+<link rel="stylesheet" href="./sesionCarroCompras.css">
+<link rel="stylesheet" href="../alertas/alertas.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="usuario" id="usuario-barra"></div>
+
+        <!-- Navegación -->
+        <nav class="nav-principal">
+            <a href="../sesionProductos/sesionProductos.html" class="nav-link nav-productos activo">Productos</a>
+            <a href="./sesionCarroCompras.html" class="nav-link nav-carrito">🛒 Carrito</a>
+        </nav>
+    </header>
+
+    <div class="contenedor">
+        <h2>🛒 TU CARRITO DE COMPRA 🛒</h2>
+
+        <table class="tabla-carrito">
+            <thead>
+                <tr>
+                    <th>Num Pedido</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Sumar Restar Eliminar</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-carrito-body"></tbody>
+        </table>
+
+        <div class="totales">
+            <span>Total a pagar:</span> <strong id="total-pagar">$0.00</strong>
+        </div>
+
+        <!-- Toggle con CSS -->
+        <input type="checkbox" id="toggle-pago" style="display:none;">
+        <div class="acciones">
+            <label for="toggle-pago" class="btn-proceder">Proceder al pago</label>
+        </div>
+
+        <!-- Sección de pago -->
+        <div class="seccion-pago">
+            <!-- Fecha de registro -->
+            <div class="fecha-bloque">
+                <div class="fecha-actual">
+                    <h3>Fecha de Registro</h3>
+                    <div id="fecha-entrega-actual"></div>
+                </div>   
+
+                <div class="fecha-entrega">   
+                    <h3>Fecha de entrega</h3>
+                    <div id="fecha-entrega"></div>
+                </div>   
+            </div>
+
+            <div>
+                <h3>Elige tu forma de pago</h3>
+            </div>
+            
+            <div class="opciones-pago-scroll" id="contenedor-metodos-pago">
+            </div>
+
+            <div class="acciones" id="guardar-pedido"></div> 
+        </div>
+    </div>
+
+    <script type="module" src="./JS/main.js"></script>
+</body>
+</html>

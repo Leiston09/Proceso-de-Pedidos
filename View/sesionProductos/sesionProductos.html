@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos | Tienda Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../alertas/alertas.css">
+    <link rel="stylesheet" href="../sesionProductos/sesionPedidos.css">
+</head>
+<body>
+
+    <header>
+        <div class="usuario" id="usuario-barra"></div>
+
+
+        <nav class="nav-principal">
+            <a href="./sesionProductos.html" class="nav-link nav-productos activo">Productos</a>
+            <a href="../carroProductos/sesionCarroCompras.html" class="nav-link nav-carrito">🛒 Carrito</a>
+        </nav>
+    </header>
+
+
+    <aside class="categorias">
+    
+        <div class="categoria-modo">
+            <select id="selector-categorias">
+            <option value="completa">Categoría completa</option>
+            <option value="individual">Categoría individual</option>
+            </select>
+        </div>
+
+        <ul id="lista-categorias">
+            <li><a class="activo" data-categoria="1">Celulares</a></li>
+            <li><a data-categoria="2">Bebidas</a></li>
+            <li><a data-categoria="3">Snacks</a></li>
+            <li><a data-categoria="4">Limpieza</a></li>
+            <li><a data-categoria="5">Hogar</a></li>
+            <li><a data-categoria="6">Casas</a></li>
+        </ul>
+
+
+    </aside>
+
+
+    <main>
+
+        <div class="scroll-productos">
+
+            <div class="lista-productos" id="lista-productos"></div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        © 2026 Tienda Online — Todos los derechos reservados
+    </footer>
+
+<div id="detalle-producto" class="modal"></div>
+
+</body>
+<script type="module" src="./JS/main.js"></script>
+
+</html>
